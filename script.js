@@ -1,6 +1,12 @@
 let counter = 0;
 let cells = document.querySelectorAll('#field td');
 let header = document.getElementById('header');
+let xWins = 0;
+let oWins = 0;
+let draws = 0;
+let xWinsElement = document.getElementById('xWins');
+let oWinsElement = document.getElementById('oWins');
+let drawsElement = document.getElementById('draws');
 
 
 function isVictory() {
@@ -25,10 +31,10 @@ function isVictory() {
 
 function tap(event) {
     if (counter % 2 == 0) {
-        event.target.innerHTML = '<img src="close.png" width=100>';
+        event.target.innerHTML = '<img src="close.png" width=90>';
     }
     else {
-        event.target.innerHTML = '<img src="circle.png" width=100>';
+        event.target.innerHTML = '<img src="circle.png" width=90>';
     }
 
     if (isVictory()) {
@@ -37,21 +43,25 @@ function tap(event) {
         }
         if (counter % 2 == 0) {
             header.innerText = 'X is winner!';
-        }
-        else {
+            xWins++;
+            xWinsElement.innerText = xWins;
+        } else {
             header.innerText = 'O is winner!';
+            oWins++;
+            oWinsElement.innerText = oWins;
         }
-    }
-    else if (counter == 8) {
+    } else if (counter == 8) {
         header.innerText = 'Draw!';
+        draws++;
+        drawsElement.innerText = draws;
     }
-
     counter++;
     event.target.removeEventListener('click', tap);
 }
 
 
 function startGame() {
+    
     header.innerText = 'Tic Tac Toe';
     counter = 0;
     for (var cell of cells) {
