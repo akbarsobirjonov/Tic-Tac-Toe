@@ -3,19 +3,29 @@
     --clr-bg: hsl(313, 40%, 27%);
 }
 .table td{
-    width: 140px;
-    height: 140px;
+    width: 120px;
+    height: 120px;
     border: 1px solid #000;
     text-align: center;
+    border-radius: 5px;
     cursor: pointer;
 }
+.table__counter td{
+    width: 100px;
+    height: 10x0px;
+    border: 1px solid #000;
+    border-radius: 5px;
+    text-align: center;
+}
+.counter{
+    margin: 25px;
+}
 .header{
-    font-size: 65px;
+    font-size: 55px;
     color: #000;
 }
   .neon-button {
       font-size: 2rem;
-
       display: inline-block;
       cursor: pointer;
       text-decoration: none;
@@ -30,7 +40,6 @@
 
       position: relative;
   }
-
   .neon-button::before {
       pointer-events: none;
       content: "";
@@ -40,12 +49,10 @@
       left: 0;
       width: 100%;
       height: 100%;
-
       transform: perspective(1em) rotateX(40deg) scale(1, 0.35);
       filter: blur(1em);
       opacity: 0.7;
   }
-
   .neon-button::after {
       content: "";
       position: absolute;
@@ -59,20 +66,3 @@
       z-index: -1;
       transition: opacity 100ms linear;
   }
-
-  .neon-button:hover,
-  .neon-button:focus {
-      color: var(--clr-bg);
-      text-shadow: none;
-  }
-
-  .neon-button:hover::before,
-  .neon-button:focus::before {
-      opacity: 1;
-  }
-
-  .neon-button:hover::after,
-  .neon-button:focus::after {
-      opacity: 1;
-  }
-
