@@ -4,12 +4,31 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <link rel="shortcut icon" type="x-icon" href="./png-transparent-tictactoe-tic-tac-toe-oxo-tac-tic-toe-computer-icons-games-buttons-game-logo-board-game-removebg-preview (1).png">
     <link rel="stylesheet" href="./style.css">
     <title>Tic Tac Toe</title>
+
 </head>
 <body>
     <h1 id="header" class="header" align="center">Tic Tac Toe</h1>
+    <div class="counter" align="center">
+        <table class="table__counter">
+            <tr>
+                <td>
+                    X wins:
+                    <span id="xWins">0</span>
+                </td>
+                <td>
+                    O wins:
+                    <span id="oWins">0</span>
+                </td>
+                <td>
+                    Draws:
+                    <span id="draws">0</span>
+                </td>
+            </tr>
+        </table>
+    </div>
     <table id="field" align="center" class="table">
         <tr>
             <td></td>
@@ -31,6 +50,7 @@
     <div align="center">
         <button id="startbutton" onclick="startGame()" class="neon-button">Start Game</button>
     </div>
+    
 
 
 </body>
